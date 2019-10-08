@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class MovieTheaterService {
     
-    ArrayList<MovieTheater> cinema;
+    private ArrayList<MovieTheater> cinema;
 
     public MovieTheaterService() {
 
@@ -29,8 +29,6 @@ public class MovieTheaterService {
         try {
 
             File file = new File(fileName);
-
-            System.out.println(file.getAbsoluteFile());
             file.createNewFile();
 
             return true;
@@ -119,6 +117,8 @@ public class MovieTheaterService {
             // renomeia o arquivo temporário com o nome do principal
             File newFile = new File(temporaryFile);
             newFile.renameTo(new File(fileName));
+            
+            System.out.println("Movie Theater successfully edited.");
             
             return true;
 
